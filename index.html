@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veltech Engineers – Electrical Engineering Solutions, Chennai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --ve-navy: #1b2a4a;
+      --ve-navy-mid: #2e4a7a;
+      --ve-amber: #f59e0b;
+      --ve-amber-light: #fef3c7;
+      --ve-bg: #f4f6fb;
+    }
+    body { font-family: 'Open Sans', sans-serif; font-size: 16px; color: #1b2a4a; background: #fff; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', sans-serif; color: var(--ve-navy); }
+
+    /* TOP BAR */
+    .topbar { background: var(--ve-navy); font-size: 0.8rem; padding: 6px 0; }
+    .topbar a { color: #c8d4eb; text-decoration: none; }
+    .topbar a:hover { color: #fff; }
+
+    /* NAVBAR */
+    .navbar { background: #fff; border-bottom: 3px solid var(--ve-amber); }
+    .navbar-brand { font-size: 1.3rem; font-weight: 700; color: var(--ve-navy) !important; letter-spacing: -0.01em; }
+    .navbar-brand span { color: var(--ve-amber); }
+    .nav-link { font-size: 0.88rem; font-weight: 600; color: var(--ve-navy) !important; padding: 0.5rem 1rem !important; }
+    .nav-link:hover { color: var(--ve-amber) !important; }
+    .btn-amber { background: var(--ve-amber); color: var(--ve-navy); font-weight: 700; border: none; font-size: 0.88rem; }
+    .btn-amber:hover { background: #d97706; color: var(--ve-navy); }
+    .btn-navy { background: var(--ve-navy); color: #fff; font-weight: 700; border: none; font-size: 0.88rem; }
+    .btn-navy:hover { background: var(--ve-navy-mid); color: #fff; }
+    .btn-outline-navy { border: 2px solid var(--ve-navy); color: var(--ve-navy); font-weight: 600; font-size: 0.88rem; background: transparent; }
+    .btn-outline-navy:hover { background: var(--ve-navy); color: #fff; }
+
+    /* HERO */
+    .hero { background: var(--ve-navy); color: #fff; padding: 72px 0; }
+    .hero .badge-pill { background: var(--ve-amber); color: var(--ve-navy); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; padding: 5px 14px; border-radius: 20px; }
+    .hero h1 { font-size: 2.6rem; font-weight: 700; line-height: 1.15; color: #fff; }
+    .hero p.lead { color: #c8d4eb; font-size: 1rem; }
+    .stat-box { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 20px; text-align: center; }
+    .stat-box .num { font-size: 1.9rem; font-weight: 700; color: var(--ve-amber); line-height: 1; }
+    .stat-box .lbl { font-size: 0.75rem; color: #c8d4eb; margin-top: 4px; }
+
+    /* SECTION COMMONS */
+    .section-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ve-amber); margin-bottom: 6px; }
+    .section-rule { border: none; border-top: 3px solid var(--ve-amber); width: 40px; margin: 0 0 16px; }
+
+    /* CLIENTS */
+    .clients-strip { background: var(--ve-bg); border-top: 1px solid #dde3ee; border-bottom: 1px solid #dde3ee; padding: 48px 0; }
+    .client-logo-wrap { display: flex; align-items: center; justify-content: center; padding: 12px 20px; }
+    .client-logo-wrap img { max-height: 70px; max-width: 160px; object-fit: contain;  transition: opacity 0.2s, filter 0.2s; }
+    .client-logo-wrap img:hover {  opacity: 1; }
+    .client-placeholder { height: 44px; min-width: 100px; background: #dde3ee; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 600; color: #8898b0; letter-spacing: 0.04em; padding: 0 12px; }
+
+    /* SERVICES */
+    .service-item { display: flex; gap: 16px; padding: 20px; border-radius: 8px; border: 1px solid #dde3ee; background: #fff; height: 100%; }
+    .service-item:hover { border-color: var(--ve-amber); }
+    .service-icon-wrap { flex-shrink: 0; width: 42px; height: 42px; background: var(--ve-amber-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .service-icon-wrap i { color: var(--ve-navy); font-size: 1.2rem; }
+    .service-item h6 { font-size: 0.9rem; font-weight: 700; color: var(--ve-navy); margin-bottom: 4px; }
+    .service-item p { font-size: 0.82rem; color: #5a6a88; margin: 0; }
+
+    /* ABOUT */
+    .about-section { background: var(--ve-bg); }
+    .about-table td, .about-table th { font-size: 0.85rem; padding: 8px 12px; }
+
+    /* CTA BAND */
+    .cta-band { background: var(--ve-amber); }
+    .cta-band h2 { color: var(--ve-navy); font-weight: 700; }
+    .cta-band p { color: #4a3200; }
+
+    /* CONTACT */
+    .contact-label { font-size: 0.78rem; font-weight: 700; color: var(--ve-navy); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 2px; }
+    .contact-value { font-size: 0.9rem; color: #2c3e60; }
+    .contact-value a { color: var(--ve-navy-mid); text-decoration: none; font-weight: 600; }
+    .contact-value a:hover { color: var(--ve-amber); }
+    .hours-table td { font-size: 0.83rem; padding: 4px 0; }
+
+    /* FOOTER */
+    .footer { background: var(--ve-navy); color: #c8d4eb; font-size: 0.82rem; }
+    .footer a { color: #c8d4eb; text-decoration: none; }
+    .footer a:hover { color: var(--ve-amber); }
+    .footer .brand { font-size: 1.1rem; font-weight: 700; color: #fff; }
+    .footer .brand span { color: var(--ve-amber); }
+    .footer-rule { border-color: rgba(255,255,255,0.1); }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.9rem; }
+      .hero { padding: 48px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container d-flex flex-wrap justify-content-between gap-2">
+    <span>
+      <i class="bi bi-telephone-fill me-1"></i>
+      <a href="tel:+919176530524" class="me-3">+91 91765 30524</a>
+      <a href="tel:+919345728010">93457 28010</a>
+    </span>
+    <a href="mailto:vtechennai@gmail.com">
+      <i class="bi bi-envelope-fill me-1"></i>vtechennai@gmail.com
+    </a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <span>V</span>eltech Engineers
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-amber px-4 py-2 rounded" href="#contact">Get a Quote</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="badge-pill mb-3 d-inline-block">21+ YEARS OF EXPERTISE · CHENNAI</span>
+        <h1 class="mb-3">Electrical Engineering<br>Solutions You Can Trust</h1>
+        <p class="lead mb-4" style="max-width:520px;">
+          Full-spectrum electrical contractor for HT &amp; LT works, panel board manufacturing, generator services, ELV systems, and annual maintenance across industrial, commercial, and hospitality projects.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#contact" class="btn btn-amber btn-lg px-4">Enquire Now</a>
+          <a href="#services" class="btn btn-outline-light btn-lg px-4">Our Services</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="row g-3">
+          <div class="col-6"><div class="stat-box"><div class="num">21+</div><div class="lbl">Years Experience</div></div></div>
+          <div class="col-6"><div class="stat-box"><div class="num">HT/LT</div><div class="lbl">Certified Works</div></div></div>
+          <div class="col-6"><div class="stat-box"><div class="num">ELV</div><div class="lbl">Systems Expert</div></div></div>
+          <div class="col-6"><div class="stat-box"><div class="num">AMC</div><div class="lbl">Maintenance Contracts</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients-strip" id="clients">
+  <div class="container">
+    <div class="text-center mb-4">
+      <div class="section-eyebrow">Trusted By</div>
+      <h2 class="fw-bold fs-4 mb-1">Clients We've Worked With</h2>
+      <p class="text-muted" style="font-size:0.88rem;">Delivering electrical engineering excellence to leading brands across Tamil Nadu.</p>
+    </div>
+    <div class="row justify-content-center align-items-center g-3">
+      <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+        <div class="client-logo-wrap"><img src="assets/image1.png" alt="Client 1"></div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+        <div class="client-logo-wrap"><img src="assets/image2.png" alt="Client 2"></div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+        <div class="client-logo-wrap"><img src="assets/image3.png" alt="Client 3"></div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+        <div class="client-logo-wrap"><img src="assets/image4.png" alt="Client 4"></div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+        <div class="client-logo-wrap"><img src="assets/image5.png" alt="Client 5"></div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+        <div class="client-logo-wrap"><img src="assets/image6.png" alt="Client 6"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="py-5" id="services">
+  <div class="container py-3">
+    <div class="mb-4">
+      <div class="section-eyebrow">What We Do</div>
+      <hr class="section-rule">
+      <h2 class="fw-bold mb-2">Our Services</h2>
+      <p class="text-muted" style="font-size:0.9rem;max-width:520px;">Comprehensive electrical engineering from first drawing to long-term maintenance.</p>
+    </div>
+    <div class="row g-3">
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-item">
+          <div class="service-icon-wrap"><i class="bi bi-pencil-square"></i></div>
+          <div>
+            <h6>Electrical Design &amp; Layout</h6>
+            <p>Tailored drawings and technical layouts to meet client specifications and site requirements.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-item">
+          <div class="service-icon-wrap"><i class="bi bi-chat-dots"></i></div>
+          <div>
+            <h6>Technical Consultation</h6>
+            <p>Cost-effective engineering guidance aligned with your project budget and operational needs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-item">
+          <div class="service-icon-wrap"><i class="bi bi-lightning-charge"></i></div>
+          <div>
+            <h6>HT &amp; LT Works</h6>
+            <p>Industrial, commercial, and hospitality electrical contracts across high and low tension systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-item">
+          <div class="service-icon-wrap"><i class="bi bi-box-seam"></i></div>
+          <div>
+            <h6>Panel Board Manufacturing &amp; Commissioning</h6>
+            <p>In-house fabrication with full HT and LT panel installation and commissioning services.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-item">
+          <div class="service-icon-wrap"><i class="bi bi-gear-wide-connected"></i></div>
+          <div>
+            <h6>Generator Services</h6>
+            <p>DG set commissioning, exhaust piping, acoustic insulation, and synchronisation of generator sets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-item">
+          <div class="service-icon-wrap"><i class="bi bi-diagram-3"></i></div>
+          <div>
+            <h6>Cable Management</h6>
+            <p>HT &amp; LT cable laying, jointing, and termination — structured and safe at every scale.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-item">
+          <div class="service-icon-wrap"><i class="bi bi-shield-check"></i></div>
+          <div>
+            <h6>ELV Systems</h6>
+            <p>Fire alarms, smoke detectors, PA systems, CCTV, and access control installation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="service-item">
+          <div class="service-icon-wrap"><i class="bi bi-tools"></i></div>
+          <div>
+            <h6>Annual Maintenance Contracts</h6>
+            <p>Scheduled upkeep and emergency response to keep electrical infrastructure running uninterrupted.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="d-flex align-items-center justify-content-center h-100 p-4 rounded" style="background:var(--ve-amber-light);border:1px solid #f3c567;">
+          <div class="text-center">
+            <i class="bi bi-telephone-fill fs-3 mb-2" style="color:var(--ve-navy);"></i>
+            <h6 class="fw-bold" style="color:var(--ve-navy);">Need a quote?</h6>
+            <p class="mb-3" style="font-size:0.82rem;color:#4a3200;">We serve clients across Chennai and Tamil Nadu.</p>
+            <a href="tel:+919176530524" class="btn btn-navy btn-sm px-4">
+              <i class="bi bi-telephone me-1"></i>+91 91765 30524
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section py-5" id="about">
+  <div class="container py-3">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-6">
+        <div class="section-eyebrow">Who We Are</div>
+        <hr class="section-rule">
+        <h2 class="fw-bold mb-3">Over Two Decades of Electrical Engineering in Chennai</h2>
+        <p class="text-muted mb-3">
+          Veltech Engineers has delivered comprehensive electrical solutions for more than 21 years, serving clients across industrial, commercial, and hospitality sectors from our base in Porur, Chennai.
+        </p>
+        <p class="text-muted mb-4">
+          We provide end-to-end responsibility — from initial design drawings through commissioning and long-term annual maintenance contracts — as a single, accountable partner for every stage of your project.
+        </p>
+        <table class="table table-bordered about-table bg-white">
+          <tbody>
+            <tr><th class="bg-light" style="width:38%;">Experience</th><td>21+ years in operation</td></tr>
+            <tr><th class="bg-light">Head Office</th><td>Porur, Chennai – 600116</td></tr>
+            <tr><th class="bg-light">Regd. Office</th><td>Thirumullaivoyal, Chennai – 600062</td></tr>
+            <tr><th class="bg-light">Sectors</th><td>Industrial · Commercial · Hospitality</td></tr>
+            <tr><th class="bg-light">Specialisation</th><td>HT/LT, Panel Boards, ELV, AMC</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-lg-6">
+        <h5 class="fw-bold mb-3">Areas of Expertise</h5>
+        <ul class="list-group list-group-flush border rounded bg-white">
+          <li class="list-group-item d-flex gap-2 align-items-center py-3">
+            <i class="bi bi-check-circle-fill" style="color:var(--ve-amber);font-size:1rem;flex-shrink:0;"></i>
+            <span style="font-size:0.9rem;">Electrical Contracts &amp; Project Management</span>
+          </li>
+          <li class="list-group-item d-flex gap-2 align-items-center py-3">
+            <i class="bi bi-check-circle-fill" style="color:var(--ve-amber);font-size:1rem;flex-shrink:0;"></i>
+            <span style="font-size:0.9rem;">HT &amp; LT Panel Board Manufacturing</span>
+          </li>
+          <li class="list-group-item d-flex gap-2 align-items-center py-3">
+            <i class="bi bi-check-circle-fill" style="color:var(--ve-amber);font-size:1rem;flex-shrink:0;"></i>
+            <span style="font-size:0.9rem;">Generator Commissioning &amp; Synchronisation</span>
+          </li>
+          <li class="list-group-item d-flex gap-2 align-items-center py-3">
+            <i class="bi bi-check-circle-fill" style="color:var(--ve-amber);font-size:1rem;flex-shrink:0;"></i>
+            <span style="font-size:0.9rem;">Cable Laying, Jointing &amp; Termination</span>
+          </li>
+          <li class="list-group-item d-flex gap-2 align-items-center py-3">
+            <i class="bi bi-check-circle-fill" style="color:var(--ve-amber);font-size:1rem;flex-shrink:0;"></i>
+            <span style="font-size:0.9rem;">ELV Systems — Fire, CCTV, PA, Access Control</span>
+          </li>
+          <li class="list-group-item d-flex gap-2 align-items-center py-3">
+            <i class="bi bi-check-circle-fill" style="color:var(--ve-amber);font-size:1rem;flex-shrink:0;"></i>
+            <span style="font-size:0.9rem;">Annual Maintenance &amp; Emergency Services</span>
+          </li>
+          <li class="list-group-item d-flex gap-2 align-items-center py-3">
+            <i class="bi bi-check-circle-fill" style="color:var(--ve-amber);font-size:1rem;flex-shrink:0;"></i>
+            <span style="font-size:0.9rem;">Electrical Design, Drawings &amp; Consultation</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band py-5">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-2">Ready to start your project?</h2>
+    <p class="mb-4">Talk to our team today. We serve clients across Chennai and Tamil Nadu.</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3">
+      <a href="tel:+919176530524" class="btn btn-navy btn-lg px-5">
+        <i class="bi bi-telephone-fill me-2"></i>Call Us Now
+      </a>
+      <a href="#contact" class="btn btn-outline-navy btn-lg px-5">Send an Enquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<!-- CONTACT -->
+<section class="py-5" id="contact">
+  <div class="container py-3">
+    
+    <div class="mb-4">
+      <div class="section-eyebrow">Reach Us</div>
+      <hr class="section-rule">
+      <h2 class="fw-bold mb-2">Contact</h2>
+      <p class="text-muted" style="font-size:0.9rem;">Available Monday to Saturday, 9:00 AM – 6:00 PM.</p>
+    </div>
+
+    <!-- The row handles the horizontal stretching -->
+    <div class="row g-4">
+      
+      <!-- Column 1: Quick Info (Phone & Email) -->
+      <div class="col-12 col-md-4">
+        <div class="mb-4">
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">
+            <a href="tel:+919176530524">+91 91765 30524</a><br>
+            <a href="tel:+919345728010">+91 93457 28010</a><br>
+            <a href="tel:04446981383">044 4698 1383</a>
+          </div>
+        </div>
+
+        <div class="mb-4 mb-md-0">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">
+            <a href="mailto:vtechennai@gmail.com">vtechennai@gmail.com</a><br>
+            <a href="mailto:vtechennai@outlook.com">vtechennai@outlook.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Locations -->
+      <div class="col-12 col-md-4">
+        <div class="mb-4">
+          <div class="contact-label">Office Address</div>
+          <div class="contact-value">
+            #12, 9th Samyapuram Main Road,<br>Porur, Chennai – 600116, Tamil Nadu
+          </div>
+        </div>
+
+        <div class="mb-4 mb-md-0">
+          <div class="contact-label">Registered Office</div>
+          <div class="contact-value">
+            #23, 1st Main Road, Thamarai Nagar,<br>Thirumullaivoyal, Chennai – 600062
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 3: Hours -->
+      <div class="col-12 col-md-4">
+        <div>
+          <div class="contact-label">Business Hours</div>
+          <table class="hours-table">
+            <tbody>
+              <tr><td class="text-muted pe-4">Mon – Sat</td><td class="fw-semibold">9:00 AM – 6:00 PM</td></tr>
+              <tr><td class="text-muted">Lunch</td><td>1:00 PM – 2:00 PM</td></tr>
+              <tr><td class="text-muted">Sunday</td><td style="color:#c0392b;font-weight:600;">Closed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4 mb-4">
+      <div class="col-md-4">
+        <div class="brand mb-2"><span>V</span>eltech Engineers</div>
+        <p class="mb-3" style="font-size:0.82rem;">Electrical Engineering Solutions<br>Chennai, Tamil Nadu</p>
+        <p style="font-size:0.78rem;color:#8898b0;">#12, 9th Samyapuram Main Road,<br>Porur, Chennai – 600116</p>
+      </div>
+      <div class="col-md-4">
+        <div class="fw-semibold text-white mb-3" style="font-size:0.85rem;">Services</div>
+        <ul class="list-unstyled" style="font-size:0.82rem;line-height:2;">
+          <li><a href="#services">HT &amp; LT Works</a></li>
+          <li><a href="#services">Panel Board Manufacturing</a></li>
+          <li><a href="#services">Generator Services</a></li>
+          <li><a href="#services">ELV Systems</a></li>
+          <li><a href="#services">Annual Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <div class="fw-semibold text-white mb-3" style="font-size:0.85rem;">Contact</div>
+        <ul class="list-unstyled" style="font-size:0.82rem;line-height:2;">
+          <li><a href="tel:+919176530524">+91 91765 30524</a></li>
+          <li><a href="tel:+919345728010">+91 93457 28010</a></li>
+          <li><a href="mailto:vtechennai@gmail.com">vtechennai@gmail.com</a></li>
+          <li>Mon – Sat: 9 AM – 6 PM</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-rule">
+    <div class="text-center" style="font-size:0.77rem;color:#5a6a88;">
+      &copy; 2025 Veltech Engineers. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
